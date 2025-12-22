@@ -108,10 +108,10 @@ export default function Christmas() {
         <audio ref={audioRef} src="/merry.mp3" preload="auto" />
 
         <div className="border-2 border-dashed border-green-500 p-4 rounded-lg bg-white/60">
-          <p className="text-green-700">🎄 May you receive all that  come true</p>
-          <p className="text-red-700">you desire and dream come true</p>
-          <p className="text-blue-700" >may this christmas bring you</p>
-          <p className="text-purple-700">joy peace and all you need in life</p>
+          <p className="text-green-700 text-lg">🎄 May you receive all that  come true</p>
+          <p className="text-red-700 text-lg">you desire and dream come true</p>
+          <p className="text-blue-700 text-lg" >may this christmas bring you</p>
+          <p className="text-purple-700 text-lg">joy peace and all you need in life</p>
           <p className="text-red-600 mt-2">🎁 Merry Christmas 🎁</p>
         </div>
 
