@@ -1,6 +1,5 @@
- // ...existing code...
-"use client"
-import { useEffect, useState } from "react";
+"use client";
+import { useEffect, useState, useRef } from "react";
 
 export default function Christmas() {
   const [name, setName] = useState("");
@@ -8,7 +7,9 @@ export default function Christmas() {
   const [timeLeft, setTimeLeft] = useState({});
   const [isChristmas, setIsChristmas] = useState(false);
 
-  // 🎄 Christmas Countdown Logic
+  const audioRef = useRef(null);
+
+  // 🎄 Countdown 
   useEffect(() => {
     const timer = setInterval(() => {
       const now = new Date();
@@ -37,88 +38,103 @@ export default function Christmas() {
     return () => clearInterval(timer);
   }, []);
 
-  // 👇 Handle Name Submit
+  // 🎵 AUTOPLAY + LOOP
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    audio.loop = true;
+    audio.volume = 0.6;
+
+    const playAudio = () => {
+      audio.play().catch(() => {});
+    };
+
+    // Desktop
+    playAudio();
+
+    // Mobile (first tap anywhere)
+    document.addEventListener("click", playAudio, { once: true });
+    document.addEventListener("touchstart", playAudio, { once: true });
+
+    return () => {
+      document.removeEventListener("click", playAudio);
+      document.removeEventListener("touchstart", playAudio);
+    };
+  }, []);
+
   const handleSubmit = () => {
-    if (!name.trim()) return alert("Please enter your name ");
-    alert(`Welcome ${name}! 🎄`);
+    if (!name.trim()) return alert("Please enter your name");
     setDisplayName(name);
     setName("");
   };
 
   return (
-    <div className="w-full min-h-screen bg-white flex justify-center px-4 py-6">
-      <div className="w-full max-w-3xl text-center space-y-6">
-        {/* NAME DISPLAY */}
-        <h1 className="text-lg sm:text-xl font-bold text-green-600">
-          {displayName
-            ? `${displayName}, ${
-                isChristmas ? "Merry Christmas 🎄" : "Wishing You In Advance 🎅"
-              }`
-            : "EMMANUEL KANEH"}
+    <div className="relative overflow-hidden w-full min-h-screen bg-white flex justify-center px-4 py-6">
+      {/* Background video */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        src="/voild.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
+      />
+
+      <div className="absolute inset-0 bg-black/30" />
+
+      <div className="w-full max-w-3xl text-center space-y-6 relative z-10">
+        <h1 className="text-lg font-bold text-green-600">
+          {displayName || "EMMANUEL KANEH"}
         </h1>
 
-        {/* STATUS TEXT */}
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-red-600">
-          {isChristmas ? "🎄 Merry Christmas 🎄" : "Wishing You In Advance"}
+        <h2 className="text-3xl font-extrabold text-red-600">
+          {isChristmas ? "🎄 Merry Christmas 🎄" : "🎅 Wishing You In Advance"}
         </h2>
 
-        {/* COUNTDOWN */}
         {!isChristmas && (
-          <p className="text-sm text-green-700 font-semibold">
-            {timeLeft.days ?? 0} Days, {timeLeft.hours ?? 0} Hrs, {timeLeft.minutes ?? 0} Min,{" "}
-            {timeLeft.seconds ?? 0} Sec
+          <p className="text-green-200">
+            {timeLeft.days ?? 0} Days, {timeLeft.hours ?? 0} Hrs,{" "}
+            {timeLeft.minutes ?? 0} Min, {timeLeft.seconds ?? 0} Sec
           </p>
         )}
 
-        {/* IMAGE SECTION - stacked on mobile, row on tablet+ */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <img
-            src="/slide3.gif"
-            alt="christmas slide"
-            className="object-cover h-40 w-40 sm:h-56 sm:w-56 rounded-md"
-            loading="lazy"
-          />
-          <img
-            src="/santa11.gif"
-            alt="santa"
-            className="object-cover h-40 w-40 sm:h-56 sm:w-56 rounded-md"
-            loading="lazy"
-          />
+        <div className="flex justify-center gap-4">
+          <img src="/slide3.gif" className="h-40 w-40 rounded-md" />
+          <img src="/santa11.gif" className="h-40 w-40 rounded-md" />
         </div>
 
-        {/* MESSAGE BOX */}
-        <div className="border-2 border-dashed border-green-500 p-4 rounded-lg text-sm font-semibold text-left sm:text-center">
-          <p className="text-green-400 text-lg">🎄 May you receive all that </p> 
-          <p className="text-orange-400 text-lg">you desire and dream for.</p>
-          <p className="text-blue-700 text-lg">🎅 May this Christmas bring you </p>
-           <p  className="text-purple-800 text-lg"> all that you need in life.</p>
+        {/* 🔊 SINGLE AUDIO ELEMENT */}
+        <audio ref={audioRef} src="/merry.mp3" preload="auto" />
+
+        <div className="border-2 border-dashed border-green-500 p-4 rounded-lg bg-white/60">
+          <p className="text-green-700">🎄 May you receive all that  come true</p>
+          <p className="text-red-700">you desire and dream come true</p>
+          <p className="text-blue-700" >may this christmas bring you</p>
+          <p className="text-purple-700">joy peace and all you need in life</p>
           <p className="text-red-600 mt-2">🎁 Merry Christmas 🎁</p>
         </div>
 
-        {/* mobile spacer so content isn't hidden behind fixed input */}
-        <div className="h-24 sm:hidden" />
+        <div className="h-24" />
       </div>
 
-      {/* INPUT AREA: fixed on small screens, static on larger screens */}
-      <div className="fixed bottom-0 left-0 w-full sm:static sm:w-auto bg-white p-3 border-t sm:border-t-0 z-40">
-        <div className="max-w-3xl mx-auto flex items-center gap-2 px-2">
+      {/* Input */}
+      <div className="fixed bottom-0 left-0 w-full p-3">
+        <div className="max-w-3xl mx-auto flex gap-2">
           <input
             value={name}
             onChange={(e) => setName(e.target.value)}
-            placeholder="👉 Enter Your Name Here..."
-            aria-label="Enter your name"
-            className="flex-1 bg-red-600 text-white placeholder-white px-4 py-3 rounded-lg outline-none"
+            placeholder="Enter Your Name"
+            className="flex-1 bg-red-600 text-white px-4 py-3 rounded-lg"
           />
           <button
             onClick={handleSubmit}
-            aria-label="Submit name"
             className="bg-green-500 text-white px-6 py-3 rounded-lg font-bold"
           >
-            👉 GO
+            GO
           </button>
         </div>
       </div>
     </div>
   );
 }
-// ...existing code...
