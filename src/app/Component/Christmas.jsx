@@ -85,11 +85,11 @@ export default function Christmas() {
 
       <div className="w-full max-w-3xl text-center space-y-6 relative z-10">
         <h1 className="text-lg font-bold text-green-600">
-          {displayName || "EMMANUEL KANEH"}
+          {displayName || ""}
         </h1>
 
         <h2 className="text-3xl font-extrabold text-red-600">
-          {isChristmas ? "🎄 Merry Christmas 🎄" : "🎅 Wishing You In Advance"}
+          {isChristmas ? " Emmanuel kaneh is whishing you 🎄 Merry Christmas 🎄" : "🎅 Emmanuel kaneh is Wishing You merry christmas In Advance"}
         </h2>
 
         {!isChristmas && (
@@ -118,15 +118,7 @@ export default function Christmas() {
         <div className="h-24" />
       </div>
 
-      {/* Input */}
-      <div className="fixed bottom-0 left-0 w-full p-3">
-        <div className="max-w-3xl mx-auto flex gap-2">
-          <input
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            placeholder="Enter Your Name"
-            className="flex-1 bg-red-600 text-white px-4 py-3 rounded-lg"
-          />
+     {/* INPUT */} <div className="fixed bottom-0 left-0 w-full p-3 z-40"> <div className="max-w-3xl mx-auto flex gap-2"> <input value={name} onChange={(e) => setName(e.target.value)} placeholder="👉 Enter Your Name" className="flex-1 bg-red-600 text-white px-4 py-3 rounded-lg outline-none" />
           <button
             onClick={handleSubmit}
             className="bg-green-500 text-white px-6 py-3 rounded-lg font-bold"
