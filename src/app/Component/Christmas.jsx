@@ -89,7 +89,7 @@ export default function Christmas() {
         </h1>
 
         <h2 className="text-3xl font-extrabold text-red-600">
-          {isChristmas ? " Emmanuel kaneh is whishing you 🎄 Merry Christmas 🎄" : "🎅 Emmanuel kaneh is Wishing You merry christmas In Advance"}
+          {isChristmas ? " Emmanuel kaneh is whishing you 🎄Merry Christmas🎄and happy new year" : "🎅 Emmanuel kaneh is Wishing You merry christmas In Advance"}
         </h2>
 
         {!isChristmas && (

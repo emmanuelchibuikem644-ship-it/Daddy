@@ -1,13 +1,15 @@
-  "use client"
-  import React from 'react'
-import Christmas from './Component/Christmas'
+    import React from 'react'
+import Error from './Component/Error'
+import Navbar from './Component/Navbar'
 import Project from './Component/Project'
+import Dolako from './Component/Dolako'
 
-
-export default function page() {
-  return (
-    <div>
-      <Christmas/>
-    </div>
-  )
-}
+  
+  export default function page() {
+    return (
+      <div>
+        <Project/>
+      </div>
+    )
+  }
+  
