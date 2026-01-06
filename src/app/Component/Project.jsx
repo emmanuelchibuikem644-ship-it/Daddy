@@ -1,4 +1,4 @@
-// ...existing code...
+ // ...existing code...
 export default function Home() {
   return (
     <div className="bg-gray-900 text-white min-h-screen">
@@ -35,15 +35,32 @@ export default function Home() {
         <h2 className="text-2xl sm:text-3xl font-bold mb-8">Projects</h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
-          {[1,2,3].map((project)=>(
-          <div key={project} className="bg-gray-800 p-4 sm:p-6 rounded shadow hover:scale-105 transition transform">
+          {/* Project 1 */}
+          <a href="https://www.gameparadise.com.ng" target="_blank" rel="noopener noreferrer" className="bg-gray-800 p-4 sm:p-6 rounded shadow hover:scale-105 transition transform">
             <div className="h-40 sm:h-48 md:h-56 bg-gray-700 rounded mb-4 flex items-center justify-center">
-              <span className="text-gray-400">Project Screenshot</span>
+              <img src="/screenshots/gameparadise.png" alt="Game Paradise" className="object-cover h-full w-full rounded"/>
             </div>
-            <h3 className="font-bold text-lg sm:text-xl mb-2">Project Title</h3>
-            <p className="text-gray-400 text-sm sm:text-base">Short description here...</p>
-          </div>
-          ))}
+            <h3 className="font-bold text-lg sm:text-xl mb-2">Game Paradise</h3>
+            <p className="text-gray-400 text-sm sm:text-base">A gaming website with modern UI for game lovers.</p>
+          </a>
+
+          {/* Project 2 */}
+          <a href="https://www.loungeluscious.com.ng" target="_blank" rel="noopener noreferrer" className="bg-gray-800 p-4 sm:p-6 rounded shadow hover:scale-105 transition transform">
+            <div className="h-40 sm:h-48 md:h-56 bg-gray-700 rounded mb-4 flex items-center justify-center">
+              <img src="/screenshots/loungeluscious.png" alt="Lounge Luscious" className="object-cover h-full w-full rounded"/>
+            </div>
+            <h3 className="font-bold text-lg sm:text-xl mb-2">Lounge Luscious</h3>
+            <p className="text-gray-400 text-sm sm:text-base">A stylish lounge website showcasing services and ambiance.</p>
+          </a>
+
+          {/* Project 3 */}
+          <a href="https://www.leelderahotel.com.ng" target="_blank" rel="noopener noreferrer" className="bg-gray-800 p-4 sm:p-6 rounded shadow hover:scale-105 transition transform">
+            <div className="h-40 sm:h-48 md:h-56 bg-gray-700 rounded mb-4 flex items-center justify-center">
+              <img src="/screenshots/leelderahotel.png" alt="Le Eldera Hotel" className="object-cover h-full w-full rounded"/>
+            </div>
+            <h3 className="font-bold text-lg sm:text-xl mb-2">Le Eldera Hotel</h3>
+            <p className="text-gray-400 text-sm sm:text-base">A hotel website highlighting rooms, bookings, and services.</p>
+          </a>
         </div>
       </section>
 
@@ -51,7 +68,7 @@ export default function Home() {
       <section className="bg-gray-800 py-12 sm:py-16">
         <h2 className="text-center text-2xl sm:text-3xl font-bold mb-6">Skills</h2>
         <div className="flex justify-center gap-4 sm:gap-6 flex-wrap px-4 sm:px-0">
-          {["Next.js","React","Tailwind","JavaScript","HTML","CSS", "Python with django"].map((skill)=>(
+          {["Next.js","React","Tailwind","JavaScript","HTML","CSS","Python with Django"].map((skill)=>(
             <span key={skill} className="bg-gray-700 px-3 sm:px-4 py-2 rounded text-sm sm:text-base">{skill}</span>
           ))}
         </div>
@@ -61,7 +78,6 @@ export default function Home() {
       <section className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
         <h2 className="text-2xl sm:text-3xl font-bold mb-6">Pricing</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          
           <div className="bg-gray-800 p-6 rounded text-center">
             <h3 className="text-xl font-bold mb-2">Basic</h3>
             <p className="text-blue-400 text-2xl font-bold">$100+</p>
@@ -79,7 +95,6 @@ export default function Home() {
             <p className="text-blue-400 text-2xl font-bold">$500+</p>
             <p className="text-gray-400 text-sm mt-2">E-commerce / advanced features</p>
           </div>
-
         </div>
       </section>
 
@@ -87,7 +102,6 @@ export default function Home() {
       <section id="contact" className="text-center py-12 sm:py-20 px-4 sm:px-0">
         <h2 className="text-2xl sm:text-3xl font-bold mb-4">Contact Me</h2>
         <p className="text-gray-400 mb-6">Want a website? Let's work together.</p>
-        
         <a href="https://wa.me/2349035432081"
            className="w-full sm:w-auto inline-block px-8 py-3 bg-green-600 rounded hover:bg-green-700 text-center">
           WhatsApp Me
