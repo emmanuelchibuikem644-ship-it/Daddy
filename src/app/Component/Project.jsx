@@ -38,7 +38,7 @@ export default function Home() {
           {/* Project 1 */}
           <a href="https://www.gameparadise.com.ng" target="_blank" rel="noopener noreferrer" className="bg-gray-800 p-4 sm:p-6 rounded shadow hover:scale-105 transition transform">
             <div className="h-40 sm:h-48 md:h-56 bg-gray-700 rounded mb-4 flex items-center justify-center">
-              <img src="/screenshots/gameparadise.png" alt="Game Paradise" className="object-cover h-full w-full rounded"/>
+              <img src="/Capture.PNG" alt="Game Paradise" className="object-cover h-full w-full rounded"/>
             </div>
             <h3 className="font-bold text-lg sm:text-xl mb-2">Game Paradise</h3>
             <p className="text-gray-400 text-sm sm:text-base">A gaming website with modern UI for game lovers.</p>
@@ -47,7 +47,7 @@ export default function Home() {
           {/* Project 2 */}
           <a href="https://www.loungeluscious.com.ng" target="_blank" rel="noopener noreferrer" className="bg-gray-800 p-4 sm:p-6 rounded shadow hover:scale-105 transition transform">
             <div className="h-40 sm:h-48 md:h-56 bg-gray-700 rounded mb-4 flex items-center justify-center">
-              <img src="/screenshots/loungeluscious.png" alt="Lounge Luscious" className="object-cover h-full w-full rounded"/>
+              <img src="/Captu.PNG" alt="Lounge Luscious" className="object-cover h-full w-full rounded"/>
             </div>
             <h3 className="font-bold text-lg sm:text-xl mb-2">Lounge Luscious</h3>
             <p className="text-gray-400 text-sm sm:text-base">A stylish lounge website showcasing services and ambiance.</p>
@@ -56,7 +56,7 @@ export default function Home() {
           {/* Project 3 */}
           <a href="https://www.leelderahotel.com.ng" target="_blank" rel="noopener noreferrer" className="bg-gray-800 p-4 sm:p-6 rounded shadow hover:scale-105 transition transform">
             <div className="h-40 sm:h-48 md:h-56 bg-gray-700 rounded mb-4 flex items-center justify-center">
-              <img src="/screenshots/leelderahotel.png" alt="Le Eldera Hotel" className="object-cover h-full w-full rounded"/>
+              <img src="/bbbbb.PNG" alt="Le Eldera Hotel" className="object-cover h-full w-full rounded"/>
             </div>
             <h3 className="font-bold text-lg sm:text-xl mb-2">Le Eldera Hotel</h3>
             <p className="text-gray-400 text-sm sm:text-base">A hotel website highlighting rooms, bookings, and services.</p>
@@ -68,7 +68,7 @@ export default function Home() {
       <section className="bg-gray-800 py-12 sm:py-16">
         <h2 className="text-center text-2xl sm:text-3xl font-bold mb-6">Skills</h2>
         <div className="flex justify-center gap-4 sm:gap-6 flex-wrap px-4 sm:px-0">
-          {["Next.js","React","Tailwind","JavaScript","HTML","CSS","Python with Django"].map((skill)=>(
+          {["Next.js","React","Tailwind","JavaScript","HTML","CSS","Python with Django","node.js"].map((skill)=>(
             <span key={skill} className="bg-gray-700 px-3 sm:px-4 py-2 rounded text-sm sm:text-base">{skill}</span>
           ))}
         </div>
