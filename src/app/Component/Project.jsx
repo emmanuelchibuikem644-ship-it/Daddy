@@ -1,113 +1,144 @@
- // ...existing code...
-export default function Home() {
+ "use client"
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { Card, CardContent } from "@/app/Component/ui/card";
+import { Button } from "@/app/Component/ui/button";
+import { Star } from "lucide-react";
+
+export default function Project() {
   return (
-    <div className="bg-gray-900 text-white min-h-screen">
+    <div className="flex min-h-screen bg-gray-50">
+      {/* Left Sidebar */}
+      <aside className="w-64 bg-white shadow-lg p-6 hidden md:block">
+        <h2 className="text-2xl font-bold mb-6">Emmazin</h2>
+        <ul className="space-y-4 text-gray-700">
+          <li><Link href="#home" className="hover:text-blue-600">Home</Link></li>
+          <li><Link href="#about" className="hover:text-blue-600">About</Link></li>
+          <li><Link href="#shop" className="hover:text-blue-600">Shop</Link></li>
+          <li><Link href="#faqs" className="hover:text-blue-600">FAQs</Link></li>
+        </ul>
+      </aside>
 
-      {/* HERO */}
-      <section className="text-center py-20 sm:py-28 px-4 sm:px-0">
-        <h1 className="text-3xl sm:text-5xl font-bold">Hi, I'm Emmanuel 👋</h1>
-        <p className="text-lg sm:text-xl text-gray-300 mt-4 mx-auto max-w-xl">
-          I build modern & responsive websites for businesses.
-        </p>
+      {/* Main Content */}
+      <div className="flex-1">
+        {/* Top Navbar */}
+        <nav className="flex justify-between items-center bg-white shadow px-8 py-4 sticky top-0 z-50">
+          <h1 className="text-xl font-bold">Emmazin IT Solutions</h1>
+          <ul className="flex space-x-6 text-gray-700">
+            <li><Link href="#home" className="hover:text-blue-600">Home</Link></li>
+            <li><Link href="#about" className="hover:text-blue-600">About</Link></li>
+            <li><Link href="#services" className="hover:text-blue-600">Services</Link></li>
+            <li><Link href="#contact" className="hover:text-blue-600">Contact</Link></li>
+          </ul>
+        </nav>
 
-        <div className="mt-6 flex flex-col sm:flex-row justify-center gap-4 px-4 sm:px-0">
-          <a href="#projects" className="w-full sm:w-auto text-center px-6 py-2 bg-blue-600 rounded hover:bg-blue-700">
-            View Projects
-          </a>
-          <a href="#contact" className="w-full sm:w-auto text-center px-6 py-2 border border-white rounded hover:bg-white hover:text-black">
-            Hire Me
-          </a>
-        </div>
-      </section>
+        {/* Hero Section */}
+        <section className="p-12 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-4xl font-bold mb-4"
+          >
+            Skilled Web & App Developer, Graphic Designer & Cybersecurity Specialist
+          </motion.h2>
+          <p className="max-w-2xl mb-6">
+            Led by Emmazin, Senior Director, we deliver secure, scalable and visually stunning digital solutions.
+          </p>
+          <Button className="bg-white text-blue-700">Schedule Your Appointment</Button>
+        </section>
 
-      {/* ABOUT */}
-      <section id="about" className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
-        <h2 className="text-2xl sm:text-3xl font-bold mb-4">About Me</h2>
-        <p className="text-gray-300 text-base sm:text-lg">
-          I'm a web developer who creates fast, responsive and professional websites.
-          I specialize in Next.js, React, and modern UI designs. I work with business
-          owners, brands, and individuals to build a strong online presence.
-        </p>
-      </section>
+        {/* Stats */}
+        <section className="grid grid-cols-2 md:grid-cols-4 gap-6 p-12 text-center">
+          <Card><CardContent><h3 className="text-3xl font-bold">1K+</h3><p>Happy Clients</p></CardContent></Card>
+          <Card><CardContent><h3 className="text-3xl font-bold">50+</h3><p>Projects Done</p></CardContent></Card>
+          <Card><CardContent><h3 className="text-3xl font-bold">20+</h3><p>Companies</p></CardContent></Card>
+          <Card><CardContent><h3 className="text-3xl font-bold">24/7</h3><p>Support</p></CardContent></Card>
+        </section>
 
-      {/* PROJECTS */}
-      <section id="projects" className="max-w-5xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
-        <h2 className="text-2xl sm:text-3xl font-bold mb-8">Projects</h2>
+        {/* Services */}
+        <section className="p-12">
+          <h2 className="text-3xl font-bold mb-8">IT Solutions & Services</h2>
+          <div className="grid md:grid-cols-4 gap-6">
+            {[
+              "Web Development",
+              "Software Development",
+              "Mobile App Development",
+              "Graphic Design",
+              "Cybersecurity",
+              "UI/UX Design",
+              "Cloud Solutions",
+              "Google Ads & SEO",
+            ].map((service) => (
+              <Card key={service} className="hover:shadow-xl transition">
+                <CardContent className="p-6">{service}</CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
-          {/* Project 1 */}
-          <a href="https://www.gameparadise.com.ng" target="_blank" rel="noopener noreferrer" className="bg-gray-800 p-4 sm:p-6 rounded shadow hover:scale-105 transition transform">
-            <div className="h-40 sm:h-48 md:h-56 bg-gray-700 rounded mb-4 flex items-center justify-center">
-              <img src="/Capture.PNG" alt="Game Paradise" className="object-cover h-full w-full rounded"/>
+        {/* Skill Ratings */}
+        <section className="p-12 bg-gray-100">
+          <h2 className="text-3xl font-bold mb-6">Expertise Rating</h2>
+          {[
+            ["Software Development", 95],
+            ["Web Development", 98],
+            ["Cybersecurity", 90],
+            ["Graphic Design", 92],
+            ["Google Ads", 88],
+          ].map(([skill, rate]) => (
+            <div key={skill} className="mb-4">
+              <p className="mb-1">{skill}</p>
+              <div className="w-full bg-gray-300 rounded-full h-3">
+                <div
+                  className="bg-blue-600 h-3 rounded-full"
+                  style={{ width: `${rate}%` }}
+                ></div>
+              </div>
             </div>
-            <h3 className="font-bold text-lg sm:text-xl mb-2">Game Paradise</h3>
-            <p className="text-gray-400 text-sm sm:text-base">A gaming website with modern UI for game lovers.</p>
-          </a>
-
-          {/* Project 2 */}
-          <a href="https://www.loungeluscious.com.ng" target="_blank" rel="noopener noreferrer" className="bg-gray-800 p-4 sm:p-6 rounded shadow hover:scale-105 transition transform">
-            <div className="h-40 sm:h-48 md:h-56 bg-gray-700 rounded mb-4 flex items-center justify-center">
-              <img src="/Captu.PNG" alt="Lounge Luscious" className="object-cover h-full w-full rounded"/>
-            </div>
-            <h3 className="font-bold text-lg sm:text-xl mb-2">Lounge Luscious</h3>
-            <p className="text-gray-400 text-sm sm:text-base">A stylish lounge website showcasing services and ambiance.</p>
-          </a>
-
-          {/* Project 3 */}
-          <a href="https://www.leelderahotel.com.ng" target="_blank" rel="noopener noreferrer" className="bg-gray-800 p-4 sm:p-6 rounded shadow hover:scale-105 transition transform">
-            <div className="h-40 sm:h-48 md:h-56 bg-gray-700 rounded mb-4 flex items-center justify-center">
-              <img src="/bbbbb.PNG" alt="Le Eldera Hotel" className="object-cover h-full w-full rounded"/>
-            </div>
-            <h3 className="font-bold text-lg sm:text-xl mb-2">Le Eldera Hotel</h3>
-            <p className="text-gray-400 text-sm sm:text-base">A hotel website highlighting rooms, bookings, and services.</p>
-          </a>
-        </div>
-      </section>
-
-      {/* SKILLS */}
-      <section className="bg-gray-800 py-12 sm:py-16">
-        <h2 className="text-center text-2xl sm:text-3xl font-bold mb-6">Skills</h2>
-        <div className="flex justify-center gap-4 sm:gap-6 flex-wrap px-4 sm:px-0">
-          {["Next.js","React","Tailwind","JavaScript","HTML","CSS","Python with Django","node.js"].map((skill)=>(
-            <span key={skill} className="bg-gray-700 px-3 sm:px-4 py-2 rounded text-sm sm:text-base">{skill}</span>
           ))}
-        </div>
-      </section>
+        </section>
 
-      {/* PRICING */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
-        <h2 className="text-2xl sm:text-3xl font-bold mb-6">Pricing</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-gray-800 p-6 rounded text-center">
-            <h3 className="text-xl font-bold mb-2">Basic</h3>
-            <p className="text-blue-400 text-2xl font-bold">$100+</p>
-            <p className="text-gray-400 text-sm mt-2">Landing page website</p>
+        {/* Testimonials */}
+        <section className="p-12">
+          <h2 className="text-3xl font-bold mb-8">What Our Clients Say</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[1, 2, 3].map((i) => (
+              <Card key={i}>
+                <CardContent className="p-6">
+                  <p>"Outstanding service, professional delivery and great support."</p>
+                  <div className="flex mt-3">{Array(5).fill(0).map((_, i) => <Star key={i} className="w-4 text-yellow-500" />)}</div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
+        </section>
 
-          <div className="bg-gray-800 p-6 rounded text-center border border-blue-500">
-            <h3 className="text-xl font-bold mb-2">Standard</h3>
-            <p className="text-blue-400 text-2xl font-bold">$200+</p>
-            <p className="text-gray-400 text-sm mt-2">Full website (3-5 pages)</p>
-          </div>
+        {/* Booking & Contact */}
+        <section className="p-12 bg-blue-700 text-white">
+          <h2 className="text-3xl font-bold mb-4">We’re Here to Help You 24/7</h2>
+          <form className="grid md:grid-cols-2 gap-4 max-w-3xl">
+            <input className="p-3 rounded text-black" placeholder="Name" />
+            <input className="p-3 rounded text-black" placeholder="E-mail" />
+            <input className="p-3 rounded text-black" placeholder="Phone Number" />
+            <textarea className="p-3 rounded text-black md:col-span-2" placeholder="Message"></textarea>
+            <Button className="md:col-span-2 bg-white text-blue-700">Book Appointment</Button>
+          </form>
+        </section>
 
-          <div className="bg-gray-800 p-6 rounded text-center">
-            <h3 className="text-xl font-bold mb-2">Premium</h3>
-            <p className="text-blue-400 text-2xl font-bold">$500+</p>
-            <p className="text-gray-400 text-sm mt-2">E-commerce / advanced features</p>
-          </div>
-        </div>
-      </section>
-
-      {/* CONTACT */}
-      <section id="contact" className="text-center py-12 sm:py-20 px-4 sm:px-0">
-        <h2 className="text-2xl sm:text-3xl font-bold mb-4">Contact Me</h2>
-        <p className="text-gray-400 mb-6">Want a website? Let's work together.</p>
-        <a href="https://wa.me/2349035432081"
-           className="w-full sm:w-auto inline-block px-8 py-3 bg-green-600 rounded hover:bg-green-700 text-center">
-          WhatsApp Me
-        </a>
-      </section>
-
+        {/* Footer */}
+        <footer className="bg-gray-900 text-gray-300 p-6 text-center">
+          © {new Date().getFullYear()} Emmazin IT Solutions. All Rights Reserved.
+        </footer>
+      </div>
     </div>
   );
 }
+
+
+
+
+
+
+
+
+
