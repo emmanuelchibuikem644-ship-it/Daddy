@@ -105,7 +105,7 @@ export default function Page() {
             </div>
 
             {/* Steps */}
-            <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
+            <div className="grid sm:grid-cols-2 gap-6 sm:gap-8 text-black-600">
               {[
                 ["01", "Discovery", "Understanding your goals, requirements, and vision."],
                 ["02", "Planning", "Strategic planning and solution design."],
@@ -114,7 +114,7 @@ export default function Page() {
               ].map(([num, title, desc]) => (
                 <div key={num} className="space-y-2 sm:space-y-3">
                   <span className="text-black text-3xl sm:text-4xl font-bold">{num}</span>
-                  <h3 className="text-lg sm:text-xl font-semibold">{title}</h3>
+                  <h3 className="text-lg sm:text-xl font-semibold text-black">{title}</h3>
                   <p className="text-gray-600 text-sm sm:text-base">{desc}</p>
                 </div>
               ))}

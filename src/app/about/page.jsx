@@ -1,4 +1,4 @@
-  import React from 'react'
+   import React from 'react'
 import Navbar from '../Component/Navbar'
 import Footer from '../Component/Footer'
 
@@ -105,9 +105,6 @@ With hands-on experience in IT services, Emmanuel has worked on building modern 
 
     {/* Header */}
     <div className="text-center mb-16">
-      <span className="text-xs uppercase text-blue-500 font-semibold">
-        Portfolio
-      </span>
       <h2 className="text-3xl md:text-4xl font-bold mt-2">
         Our Recent Projects
       </h2>
@@ -123,7 +120,7 @@ With hands-on experience in IT services, Emmanuel has worked on building modern 
       {/* Project 1 */}
       <div className="bg-gray-50 rounded-xl shadow hover:shadow-lg transition overflow-hidden">
         <img
-          src="/projects/project1.jpg"
+          src="/Captu.PNG"
           alt="Project One"
           className="w-full h-56 object-cover"
         />
@@ -135,9 +132,7 @@ With hands-on experience in IT services, Emmanuel has worked on building modern 
           </p>
 
           <a
-            href="https://yourprojectlink.com"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="www.maracre.com.ng"
             className="inline-block mt-5 px-5 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition"
           >
             View Project
@@ -148,7 +143,7 @@ With hands-on experience in IT services, Emmanuel has worked on building modern 
       {/* Project 2 */}
       <div className="bg-gray-50 rounded-xl shadow hover:shadow-lg transition overflow-hidden">
         <img
-          src="/projects/project2.jpg"
+          src="/bbbbb.PNG"
           alt="Project Two"
           className="w-full h-56 object-cover"
         />
@@ -160,9 +155,7 @@ With hands-on experience in IT services, Emmanuel has worked on building modern 
           </p>
 
           <a
-            href="https://yourprojectlink.com"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="www.leelderahotel.com.ng"
             className="inline-block mt-5 px-5 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition"
           >
             View Project
@@ -173,7 +166,7 @@ With hands-on experience in IT services, Emmanuel has worked on building modern 
       {/* Project 3 */}
       <div className="bg-gray-50 rounded-xl shadow hover:shadow-lg transition overflow-hidden">
         <img
-          src="/projects/project3.jpg"
+          src="/Capture.PNG"
           alt="Project Three"
           className="w-full h-56 object-cover"
         />
@@ -183,15 +176,11 @@ With hands-on experience in IT services, Emmanuel has worked on building modern 
             A custom web application built to streamline operations and
             improve productivity.
           </p>
-
-          <a
-            href="https://yourprojectlink.com"
-            target="_blank"
-            rel="noopener noreferrer"
+           <div
             className="inline-block mt-5 px-5 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition"
           >
-            View Project
-          </a>
+          <a href="www.gameparadise.com.ng"> View Project</a>  
+          </div>
         </div>
       </div>
 

@@ -115,7 +115,7 @@ export default function Emma() {
             </p>
 
             {/* Progress Bars */}
-            <div className="mt-8 space-y-5">
+            <div className="mt-8 space-y-5 myloader">
               {[
                 { name: "Software Development", value: "92%" },
                 { name: "Cyber Security", value: "67%" },
@@ -275,10 +275,10 @@ export default function Emma() {
         </div>
 
         {/* STATS */}
-        <div className="relative max-w-6xl mx-auto px-6 mt-16">
+        <div className="relative max-w-6xl mx-auto px-6 mt-16 reader">
           <div className="grid grid-cols-3 bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl">
 
-            <div className="py-6 text-center border-r border-white/20">
+            <div className="py-6 text-center border-r border-white/20 ">
               <h3 className="text-3xl font-bold text-blue-400">500</h3>
               <p className="text-sm text-gray-200">Happy Clients</p>
             </div>

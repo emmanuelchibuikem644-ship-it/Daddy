@@ -21,7 +21,7 @@ export default function Navbar() {
       <nav className="hidden lg:flex justify-between items-center shadow px-4 py-3 bg-white">
         <div className="flex items-center gap-3">
           <img className="h-12 w-12 object-contain" src="/images.jpeg" alt="" />
-          <h1 className="text-xl font-cursive">Emmazin IT Solutions</h1>
+          <h1 className="text-xl font-cursive text-black">Emmazin IT Solutions</h1>
         </div>
 
         <div className="text-blue-400 flex gap-8">

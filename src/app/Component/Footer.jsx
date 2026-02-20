@@ -4,7 +4,7 @@
    return (
      <div>
          {/* Footer (no map) */}
-      <footer className=" border-t border-slate-200 ">
+      <footer className=" border-t border-slate-200 bg-gray-50 text-gray-700"> 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 grid gap-10 md:grid-cols-4">
           <div className="md:col-span-1">
             <h3 className="text-lg font-bold tracking-tight">Emmazin</h3>
